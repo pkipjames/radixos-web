@@ -1,3 +1,4 @@
+var windowHighestIndex=1000;
 function elt(name, attributes) {
   var node = document.createElement(name);
   if (attributes) {
