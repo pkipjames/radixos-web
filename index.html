@@ -55,7 +55,9 @@ background: -o-linear-gradient(left, rgba(255,0,0,1) 0%, rgba(255,238,238,1) 0%,
 background: -ms-linear-gradient(left, rgba(255,0,0,1) 0%, rgba(255,238,238,1) 0%, rgba(255,0,0,1) 0%, rgba(255,238,238,1) 50%, rgba(255,0,0,1) 100%);
 background: linear-gradient(to right, rgba(255,0,0,1) 0%, rgba(255,238,238,1) 0%, rgba(255,0,0,1) 0%, rgba(255,238,238,1) 50%, rgba(255,0,0,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0000', endColorstr='#ff0000', GradientType=1 );text-align:center;" class="screen">
-
+<input type="text" id="uname" placeholder="Username" /><br/>
+<input type="password" id="pword" placeholder="Password" /><br/>
+<button onclick="var uname=document.querySelector('uname');var pword=document.querySelector('pword');if(login(uname.value,pword.value)){runLogon(uname);}else{pword.value='';appOpen(document.querySelector('#loginSCreen'),'Login Failed',elt('span',null,'Incorrect username/password combination.',200,200,false);}">Login</button>
 </section>
 <section id="desktop" class="desktop" style="display:none;" class="screen">
   <nav style="display:block;" class="nav" id="mainNavApp"><img src="mainBtn2.png" width="40" height="40" alt="+" title="App Menu" /></nav>
