@@ -69,6 +69,9 @@ win.appendChild(elt("div",{class:"content"},content));
 win.onclick=function (event){
   if(!(win.classList.indexOf("active")!=-1)){makeWindowsInactive();win.classList.add("active");win.style.zIndex=windowHighestIndex+1;windowHighestIndex+=2;increaseSize();}
 };
+win.style.height=height+"px";
+win.style.width=width+"px";
+ 
   
 nav1.ontouchmove=function (event){
   var x=event.pageX;
