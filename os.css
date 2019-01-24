@@ -7,3 +7,13 @@ body {margin:0px;padding:0px}
 .appwindow .titlebar {margin:0px;padding:0px;background-color:#000000;color#ffffff;height:21px;position:absolute;left:0px;right:0px;top:0px;}
 
 .appwindow .content {margin:0px;padding:0px;background-color:#ffffff;color#000000;height:21px;position:absolute;left:0px;right:0px;top:21px;bottom:0px;}
+
+.screen {position:fixed;top:0px;left:0px;right:0px;bottom:0px;margin:0px;padding:0px;}
+
+.desktop {margin:0px;padding:0px;}
+
+.desktop .nav {z-index:5;margin:0px;padding:0px;position:fixed;right:0px;top:0px;bottom:0px;margin:0px;padding:0px;width:30px;}
+
+.desktop .nav .icon {z-index:6;margin:0px;padding:0px;position:fixed;right:0px;top:0px;margin:0px;padding:0px;width:40px;height:40px;}
+
+.desktop .startmenu {z-index:7;margin:0px;padding:0px;position:fixed;top:0px;bottom:0px;left:0px;margin:0px;padding:0px;right:40px;}
