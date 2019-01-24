@@ -1,4 +1,14 @@
 var windowHighestIndex=1000;
+function showSystemLogin(){
+ if(!localStorage.hasItem("radixos")){
+  localStorage.setItem("uname",prompt("Setup\n\nEnter the desired username:"));
+  
+  
+ }
+ 
+ 
+}
+
 function increaseSize(){
 var e1=document.querySelectorAll(".desktop .nav");
 var e2=document.querySelectorAll(".desktop .nav .icon");
