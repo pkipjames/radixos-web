@@ -1,4 +1,19 @@
 var windowHighestIndex=1000;
+function increaseSize(){
+var e1=document.querySelectorAll(".desktop .nav");
+var e2=document.querySelectorAll(".desktop .nav .icon");
+var e3=document.querySelectorAll(".desktop .startmenu");
+for (var i=0;i<e1.length;i++){
+ e1[i].style.zIndex= windowHighestIndex+5;
+}
+  for (var i=0;i<e2.length;i++){
+ e2[i].style.zIndex= windowHighestIndex+6;
+}
+  for (var i=0;i<e3.length;i++){
+ e3[i].style.zIndex= windowHighestIndex+7;
+}
+  
+}
 function elt(name, attributes) {
   var node = document.createElement(name);
   if (attributes) {
@@ -52,7 +67,7 @@ win.appendChild(nav1);
 
 win.appendChild(elt("div",{class:"content"},content));
 win.onclick=function (event){
-  if(!(win.classList.indexOf("active")!=-1)){makeWindowsInactive();win.classList.add("active");}
+  if(!(win.classList.indexOf("active")!=-1)){makeWindowsInactive();win.classList.add("active");win.style.zIndex=windowHighestIndex+1;windowHighestIndex+=2;increaseSize();}
 };
   
 nav1.ontouchmove=function (event){
