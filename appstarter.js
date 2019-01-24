@@ -26,7 +26,7 @@ screens[i].style.display="none";
 
 document.getElementById(id).style.display="block";
 
-}catch(err){alert("ERROR\n\nshowScreen:\n"+err");}
+}catch(err){alert("ERROR\n\nshowScreen:\n"+err);}
 
 }
 
