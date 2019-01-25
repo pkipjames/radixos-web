@@ -126,8 +126,8 @@ console.log("moving a window...");
   var rect=event.target.getBoundingClientRect();
   var x=event.pageX+(event.clientX-rect.left);
 var y=event.pageY+(event.clientY-rect.top);
-win.style.top = y+ "px";
-win.style.left = x + "px";
+win.style.top = (new String(y))+ "px";
+win.style.left = (new String(x)) + "px";
 win.style.height=height+"px";
 win.style.width=width+"px";
                                        
