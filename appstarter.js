@@ -124,8 +124,8 @@ win.style.left = ((win.innerHeight-width)/2) + "px";
 nav1.onmousedown=function (event){
 console.log("moving a window...");
   var rect=event.target.getBoundingClientRect();
-  var x=event.pageX+(event.pageX-rect.left);
-var y=event.pageY+(event.pageY-rect.top);
+  var x=event.pageX+(event.clientX-rect.left);
+var y=event.pageY+(event.clientY-rect.top);
 win.style.top = y+ "px";
 win.style.left = x + "px";
 win.style.height=height+"px";
@@ -133,16 +133,7 @@ win.style.width=width+"px";
                                        
 };
 
-nav1.ondrag=function (event){
 
-var x=event.pageX;
-var y=event.pageY;
-win.style.top = y + "px";
-win.style.left = x + "px";
-win.style.height=height+"px";
-win.style.width=width+"px";
-                                       
-};
 
 return win;
 }
