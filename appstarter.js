@@ -93,7 +93,7 @@ var win=elt("div",{moving:false,class:"appwindow"});
  var ico;
 if(icon){ico=elt("img",{src:icon,height:"18px",alt:"icon"});}else{ ico=elt("span",{style:"border:1px solid #ffffff;"},name.substring(0,1));}
 
-var nav1=elt("nav",{class:"titlebar"},elt("span",{onclick:function (event){event.stopPropagation();win.parentNode.removeChild(win);},style:"font-family:Ubuntu,'helvetica neue',verdana,sans-serif;font-weight:100;color:#ff0000;"},"X"),ico,name);
+var nav1=elt("nav",{class:"titlebar"},elt("button",{class:"closeButton",onclick:function (event){event.stopPropagation();win.parentNode.removeChild(win);},style:"font-family:Ubuntu,'helvetica neue',verdana,sans-serif;font-weight:100;color:#ff0000;"},"X"),ico,name);
 
 makeWindowsInactive();
 win.classList.add("active");
