@@ -165,8 +165,8 @@ win.style.top = (new String(y))+ "px";
 win.style.left = (new String(x)) + "px";
 win.style.height=height+"px";
 win.style.width=width+"px";
-  }              
-};
+  };
+
 
 
 
