@@ -106,8 +106,7 @@ win.onclick=function (event){
 };
 win.style.height=height+"px";
 win.style.width=width+"px";
- 
-  
+win.style.zIndex=windowHighestIndex+1;windowHighestIndex+=2;increaseSize();  
 nav1.ontouchmove= function (event){
   var x=event.pageX;
   var y=event.pageY;
@@ -123,8 +122,8 @@ nav1.ontouchmove= function (event){
 win.style.top = ((win.innerHeight-height)/2)+ "px";
 win.style.left = ((win.innerHeight-width)/2) + "px";
 nav1.onmousedown=function (event){
-alert("i");
-var x=event.pageX;
+console.log("moving a window...");
+  var x=event.pageX;
 var y=event.pageY;
 win.style.top = y+ "px";
 win.style.left = x + "px";
