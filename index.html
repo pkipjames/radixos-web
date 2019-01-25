@@ -102,6 +102,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0000', end
 <br/>
 <input type="password" id="pword" placeholder="Password" onkeypress="try{if(event.keyCode==13){var uname=document.querySelector('uname');var pword=document.querySelector('pword');if(login(uname.value,pword.value)){runLogon(uname);}else{pword.value='';appOpen(document.querySelector('#loginSCreen'),'Login Failed',elt('span',null,'Incorrect username/password combination.'),200,200,false);}}}catch(err){alert(err);}" /></p>
 <br/><button onclick="try{var uname=document.querySelector('#uname');var pword=document.querySelector('#pword');if(login(uname.value,pword.value)){runLogon(uname);}else{pword.value='';appOpen(document.querySelector('#loginSCreen'),'Login Failed',elt('span',null,'Incorrect username/password combination.'),200,200,false);}}catch(err){alert(err);}">Login</button>
+ </section>
      <section class="screen" id="mainSetup" style="display:none;">
       <h1>RadixOS Setup</h1>
       <input type="text" id="name1" placeholder="Username" /><br/>
