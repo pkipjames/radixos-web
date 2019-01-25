@@ -93,7 +93,7 @@ var win=elt("div",{class:"appwindow"});
  var ico;
 if(icon){ico=elt("img",{src:icon,height:"18px",alt:"icon"});}else{ ico=elt("span",{style:"border:1px solid #ffffff;"},name.substring(0,1));}
 
-var nav1=elt("nav",{class:"titlebar",moving:"false"},elt("span",{onclick:function (){win.parentNode.removeChild(win);},style:"font-family:Ubuntu,'helvetica neue',verdana,sans-serif;font-weight:100;color:#ff0000;"},"X"),ico,name);
+var nav1=elt("nav",{class:"titlebar"},elt("span",{onclick:function (){win.parentNode.removeChild(win);},style:"font-family:Ubuntu,'helvetica neue',verdana,sans-serif;font-weight:100;color:#ff0000;"},"X"),ico,name);
 
 makeWindowsInactive();
 win.classList.add("active");
@@ -121,21 +121,27 @@ nav1.ontouchmove=function (event){
   
   
 };
-  nav1.onmousedown=function (event){nav1.setAttribute("moving","true");};
-  nav1.onmouseup=function (event){nav1.setAttribute("moving","false");};
+  
+  nav1.onmousedown=function (event){
+  var e = event || window.event;
 
-  nav1.onmousemove=function (event){if(nav1.getAttribute("moving")=="true"){
+    e.preventDefault();
   var x=event.pageX;
   var y=event.pageY;
-  
-  win.style.top=y+"px";
-  win.style.left=x+"px";
+ var pos1 = pos3 - e.clientX;
+  var pos2 = pos4 - e.clientY;
+ var pos3 = e.clientX;
+   var pos4 = e.clientY;
+    // set the element's new position:
+    win.style.top = (win.offsetTop - pos2) + "px";
+    win.style.left = (win.offsetLeft - pos1) + "px";
+
   win.style.height=height+"px";
   win.style.width=width+"px";
   
   
   
-                                       }
+                                       
 };
 
 return win;
