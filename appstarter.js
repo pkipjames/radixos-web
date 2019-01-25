@@ -116,26 +116,17 @@ nav1.ontouchmove=function (event){
   win.style.left=x+"px";
   win.style.height=height+"px";
   win.style.width=width+"px";
-  
-  
-  
-  
+
 };
   
-  nav1.onmousedown=function (event){
+nav1.onmousedown=function (event){
 
-    event.preventDefault();
-  var x=event.pageX;
-  var y=event.pageY;
-
-    win.style.top = y + "px";
-    win.style.left = x + "px";
-
-  win.style.height=height+"px";
-  win.style.width=width+"px";
-  
-  
-  
+var x=event.pageX;
+var y=event.pageY;
+win.style.top = y + "px";
+win.style.left = x + "px";
+win.style.height=height+"px";
+win.style.width=width+"px";
                                        
 };
 
