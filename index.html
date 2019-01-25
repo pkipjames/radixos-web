@@ -8,7 +8,6 @@
 
 <meta charset="UTF-8" />
 
-<meta http-equiv="X-UA-Compatible" content="chrome=1">
 
 <meta name="apple-mobile-web-app-capable" content="yes" />
 
@@ -100,8 +99,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0000', end
  <br/>
 <input type="text" id="uname" placeholder="Username" />
 <br/>
-<input type="password" id="pword" placeholder="Password" onkeypress="try{if(event.keyCode==13){var uname=document.querySelector('uname');var pword=document.querySelector('pword');if(login(uname.value,pword.value)){runLogon(uname);}else{pword.value='';appOpen(document.querySelector('#loginSCreen'),'Login Failed',elt('span',null,'Incorrect username/password combination.'),200,200,false);}}}catch(err){alert(err);}" /></p>
-<br/><button onclick="try{var uname=document.querySelector('#uname');var pword=document.querySelector('#pword');if(login(uname.value,pword.value)){runLogon(uname);}else{pword.value='';appOpen(document.querySelector('#loginSCreen'),'Login Failed',elt('span',null,'Incorrect username/password combination.'),200,200,false);}}catch(err){alert(err);}">Login</button>
+<input type="password" id="pword" placeholder="Password" onkeypress="try{if(event.keyCode==13){var uname=document.querySelector('uname');var pword=document.querySelector('pword');if(login(uname.value,pword.value)){runLogon(uname);}else{pword.value='';appOpen(document.querySelector('#loginScreen'),'Login Failed',elt('span',null,'Incorrect username/password combination.'),200,200,false);}}}catch(err){alert(err);}" /></p>
+<br/><button onclick="try{var uname=document.querySelector('#uname');var pword=document.querySelector('#pword');if(login(uname.value,pword.value)){runLogon(uname);}else{pword.value='';appOpen(document.querySelector('#loginScreen'),'Login Failed',elt('span',null,'Incorrect username/password combination.'),200,200,false);}}catch(err){alert(err);}">Login</button>
  </section>
      <section class="screen" id="mainSetup" style="display:none;">
       <h1>RadixOS Setup</h1>
