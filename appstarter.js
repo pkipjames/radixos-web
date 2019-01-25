@@ -123,18 +123,13 @@ nav1.ontouchmove=function (event){
 };
   
   nav1.onmousedown=function (event){
-  var e = event || window.event;
 
-    e.preventDefault();
+    event.preventDefault();
   var x=event.pageX;
   var y=event.pageY;
- var pos1 = pos3 - e.clientX;
-  var pos2 = pos4 - e.clientY;
- var pos3 = e.clientX;
-   var pos4 = e.clientY;
-    // set the element's new position:
-    win.style.top = (win.offsetTop - pos2) + "px";
-    win.style.left = (win.offsetLeft - pos1) + "px";
+
+    win.style.top = y + "px";
+    win.style.left = x + "px";
 
   win.style.height=height+"px";
   win.style.width=width+"px";
