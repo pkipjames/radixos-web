@@ -40,7 +40,7 @@
 
 <style> /* CSS rules to use for styling the overlay: .chromeFrameOverlayContent .chromeFrameOverlayContent iframe .chromeFrameOverlayCloseBar .chromeFrameOverlayUnderlay */ </style>
 <style type="text/css"> 
- input[type="text"],  textarea, select,  input[type="date"] { 
+ input[type="text"],  textarea, select,  input[type="date"], input{ 
    background-color:#000000;
    border:solid 1px #FFFFFF;
    font-size:16px;
@@ -89,7 +89,7 @@ form.form p.submit {
 
 </head>
 
-<body onload="CFInstall.check();checkMemStatus();">
+<body onload="try{CFInstall.check();checkMemStatus();}catch(err){alert(err);}">
 <section id="loginScreen" style="background: rgba(255,0,0,1);
 background: -moz-linear-gradient(left, rgba(255,0,0,1) 0%, rgba(255,238,238,1) 0%, rgba(255,0,0,1) 0%, rgba(255,238,238,1) 50%, rgba(255,0,0,1) 100%);
 background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,0,0,1)), color-stop(0%, rgba(255,238,238,1)), color-stop(0%, rgba(255,0,0,1)), color-stop(50%, rgba(255,238,238,1)), color-stop(100%, rgba(255,0,0,1)));
