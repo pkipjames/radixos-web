@@ -145,6 +145,7 @@ win.style.height=height+"px";
 win.style.width=width+"px";
 win.setAttribute("moving","false");                                       
 };
+  
 nav1.onmousemove=function (event){
   if(win.getAttribute("moving")=="true"){
 console.log("moving a window...");
