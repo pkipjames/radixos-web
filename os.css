@@ -5,8 +5,8 @@ body {margin:0px;padding:0px}
 
 
 
-.appwindow.active .titlebar {margin:0px;padding:0px;background-color:#000000;color#ffffff;height:21px;position:absolute;left:0px;right:0px;top:0px;}
-.appwindow:not(.active) .titlebar {margin:0px;padding:0px;background-color:#c0c0c0;color#ffffff;height:21px;position:absolute;left:0px;right:0px;top:0px;}
+.appwindow.active .titlebar {text-align:left;margin:0px;padding:0px;background-color:#000000;color:#ffffff;height:21px;position:absolute;left:0px;right:0px;top:0px;}
+.appwindow:not(.active) .titlebar {margin:0px;padding:0px;background-color:#c0c0c0;color:#ffffff;height:21px;position:absolute;left:0px;right:0px;top:0px;}
 
 
 
