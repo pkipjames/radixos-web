@@ -120,8 +120,10 @@ nav1.ontouchmove= function (event){
 
 };
   
+win.style.top = ((win.innerHeight-height)/2)+ "px";
+win.style.left = ((win.innerHeight-width)/2) + "px";
 nav1.onmousedown=function (event){
-
+alert("i");
 var x=event.pageX;
 var y=event.pageY;
 win.style.top = y+ "px";
