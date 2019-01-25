@@ -8,7 +8,7 @@ function setupUser(name,pword,fsauto){
 
 function getE(txt){return document.querySelector(txt);}
 function checkMemStatus(){
- if(!localStorage.hasItem("radixos")){setTimeout(function (){showScreen("mainSetup");},100);}
+ if(!localStorage.getItem("radixos")){setTimeout(function (){showScreen("mainSetup");},100);}
 }
 function login(name,pword){
  if(localStorage.setItem("uname")==name&&localStorage.setItem("pword")==pword){
