@@ -130,5 +130,16 @@ win.style.width=width+"px";
                                        
 };
 
+nav1.ondrag=function (event){
+
+var x=event.pageX;
+var y=event.pageY;
+win.style.top = y + "px";
+win.style.left = x + "px";
+win.style.height=height+"px";
+win.style.width=width+"px";
+                                       
+};
+
 return win;
 }
