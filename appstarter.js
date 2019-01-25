@@ -1,14 +1,20 @@
 var windowHighestIndex=1000;
-function showSystemLogin(){
- if(!localStorage.hasItem("radixos")){
-  localStorage.setItem("uname",prompt("Setup\n\nEnter the desired username:"));
-  
-  
- }
- 
- 
+function setupUser(name,pword,fsauto){
+ localStorage.setItem("radixos","true");
+  localStorage.setItem("uname",name);
+  localStorage.setItem("pword",pword);
+   localStorage.setItem("uname",fsauto);
 }
 
+function checkMemStatus(){
+ if(!localStorage.hasItem("radixos")){setTimeout(function (){showScreen("mainSetup");},100);}
+}
+function login(name,pword){
+ if(localStorage.setItem("uname")==name&&localStorage.setItem("pword")==pword){
+  return true;
+ }else{return false;}
+ 
+}
 function increaseSize(){
 var e1=document.querySelectorAll(".desktop .nav");
 var e2=document.querySelectorAll(".desktop .nav .icon");
