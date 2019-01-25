@@ -138,7 +138,7 @@ win.setAttribute("moving","true");
 nav1.onmouseup=function (event){
 console.log("moving a window...");
 var x=parseFloat(event.pageX)-width/2;
-var y=parseFloat(event.pageY)-2;
+var y=parseFloat(event.pageY)-(20/2);
 win.style.top = (new String(y))+ "px";
 win.style.left = (new String(x)) + "px";
 win.style.height=height+"px";
@@ -149,7 +149,7 @@ nav1.onmousemove=function (event){
   if(win.getAttribute("moving")=="true"){
 console.log("moving a window...");
 var x=parseFloat(event.pageX)-width/2;
-var y=parseFloat(event.pageY)-2;
+var y=parseFloat(event.pageY)-(20/2);
 win.style.top = (new String(y))+ "px";
 win.style.left = (new String(x)) + "px";
 win.style.height=height+"px";
