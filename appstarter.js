@@ -156,6 +156,16 @@ win.style.height=height+"px";
 win.style.width=width+"px";
   }               
 };
+  nav1.ondrag=function (event){
+console.log("moving a window...");
+var x=parseFloat(event.pageX)-width/2;
+var y=parseFloat(event.pageY)-(20/2);
+win.style.top = (new String(y))+ "px";
+win.style.left = (new String(x)) + "px";
+win.style.height=height+"px";
+win.style.width=width+"px";
+  }              
+};
 
 
 
