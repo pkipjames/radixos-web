@@ -95,6 +95,9 @@ if(icon){ico=elt("img",{src:icon,height:"18px",alt:"icon"});}else{ ico=elt("span
 var closeBTN=elt("button",{class:"closeButton",style:"font-family:Ubuntu,'helvetica neue',verdana,sans-serif;font-weight:100;"},"X");
 var nav1=elt("nav",{class:"titlebar"},closeBTN,ico,name);
 closeBTN.onclick=function (event){event.stopPropagation();win.parentNode.removeChild(win);};
+closeBTN.onmousedown=function (event){event.stopPropagation();win.parentNode.removeChild(win);};
+closeBTN.ontouchstart=function (event){event.stopPropagation();win.parentNode.removeChild(win);};
+
 makeWindowsInactive();
 win.classList.add("active");
 parent.appendChild(win);
