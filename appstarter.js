@@ -5,6 +5,7 @@ function setupUser(name,pword,fsauto){
   localStorage.setItem("pword",pword);
    localStorage.setItem("uname",fsauto);
 }
+
 function getE(txt){return document.querySelector(txt);}
 function checkMemStatus(){
  if(!localStorage.hasItem("radixos")){setTimeout(function (){showScreen("mainSetup");},100);}
@@ -15,17 +16,18 @@ function login(name,pword){
  }else{return false;}
  
 }
+
 function increaseSize(){
 var e1=document.querySelectorAll(".desktop .nav");
 var e2=document.querySelectorAll(".desktop .nav .icon");
 var e3=document.querySelectorAll(".desktop .startmenu");
-for (var i=0;i<e1.length;i++){
+for(var i=0;i<e1.length;i++){
  e1[i].style.zIndex= windowHighestIndex+5;
 }
-  for (var i=0;i<e2.length;i++){
+  for(var i=0;i<e2.length;i++){
  e2[i].style.zIndex= windowHighestIndex+6;
 }
-  for (var i=0;i<e3.length;i++){
+  for(var i=0;i<e3.length;i++){
  e3[i].style.zIndex= windowHighestIndex+7;
 }
   
@@ -71,10 +73,10 @@ for( var i=0;i<wins.length;i++){
 }
 function appOpen(parent,name,content,height,width,icon){
 var win=elt("div",{class:"appwindow"});
-if(icon){var ico=elt("img",{src:icon,height:"18px",alt:"icon"});}else{var ico=elt("span",{style:"border:1px solid #ffffff;"},(new String(name)).substring(0,1));}
+ var ico;
+if(icon){ico=elt("img",{src:icon,height:"18px",alt:"icon"});}else{ ico=elt("span",{style:"border:1px solid #ffffff;"},name.substring(0,1));}
 
-var nav1=elt("nav",{class:"titlebar",moving:"false"},elt("span",{onclick:function (){win.parentNode.removeChild(win);},style:"font-family:Ubuntu,'helvetica neue',verdana,sans-serif;font-weight:100;color:#ff0000;"},"X")
-,ico,name);
+var nav1=elt("nav",{class:"titlebar",moving:"false"},elt("span",{onclick:function (){win.parentNode.removeChild(win);},style:"font-family:Ubuntu,'helvetica neue',verdana,sans-serif;font-weight:100;color:#ff0000;"},"X"),ico,name);
 
 makeWindowsInactive();
 win.classList.add("active");
@@ -83,7 +85,7 @@ win.appendChild(nav1);
 
 win.appendChild(elt("div",{class:"content"},content));
 win.onclick=function (event){
-  if(!(win.classList.indexOf("active")!=-1)){makeWindowsInactive();win.classList.add("active");win.style.zIndex=windowHighestIndex+1;windowHighestIndex+=2;increaseSize();}
+  if((win.classList.indexOf("active")==-1)){makeWindowsInactive();win.classList.add("active");win.style.zIndex=windowHighestIndex+1;windowHighestIndex+=2;increaseSize();}
 };
 win.style.height=height+"px";
 win.style.width=width+"px";
