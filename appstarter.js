@@ -1,22 +1,39 @@
 var windowHighestIndex=1000;
+var users={};
+function getFS(){return   localStorage.getItem("fsauto")=="true";}
+function addUser(name,pword){
+  users[name]={background:"bg1.png",name:name,pword:pword};
+ saveUsers();
+
+ 
+}
 function setupUser(name,pword,fsauto){
  localStorage.setItem("radixos","true");
-  localStorage.setItem("uname",name);
-  localStorage.setItem("pword",pword);
-   localStorage.setItem("uname",fsauto);
+ users[name]={background:"bg1.png",name:name,pword:pword};
+   localStorage.setItem("fsauto",fsauto);
+ saveUsers();
 }
 
 function getE(txt){return document.querySelector(txt);}
 function checkMemStatus(){
- if(!localStorage.getItem("radixos")){setTimeout(function (){showScreen("mainSetup");},100);}
+ if(!localStorage.getItem("radixos")){setTimeout(function (){showScreen("mainSetup");},100);}else{getUsers();if(getFS()){document.body.requestFullScreen=document.body.requestFullScreen||document.body.webkitRequestFullScreen||document.body.mozRequestFullScreen;document.body.requestFullScreen();}}
 }
 function login(name,pword){
- if(localStorage.setItem("uname")==name&&localStorage.setItem("pword")==pword){
-  return true;
+ if(users[name]){
+  if(users[name]["pword"]==pword){
+   return true;
+  }else{return false;}
  }else{return false;}
- 
+
 }
 
+function runLogon(uname){var settings=users[uname];
+                         getE("#desktop").style.backgroundImage="url('"+settings["background"]+"')";
+
+                        }
+function saveUsers(){localStorage.setItem("users",JSON.stringify(users));}
+function getUsers(){users=JSON.parse(localStorage.getItem("users"));}
+             
 function increaseSize(){
 var e1=document.querySelectorAll(".desktop .nav");
 var e2=document.querySelectorAll(".desktop .nav .icon");
