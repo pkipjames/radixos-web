@@ -5,7 +5,7 @@ function setupUser(name,pword,fsauto){
   localStorage.setItem("pword",pword);
    localStorage.setItem("uname",fsauto);
 }
-
+function getE(txt){return document.querySelector(txt);}
 function checkMemStatus(){
  if(!localStorage.hasItem("radixos")){setTimeout(function (){showScreen("mainSetup");},100);}
 }
