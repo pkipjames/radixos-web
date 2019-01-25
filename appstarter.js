@@ -123,9 +123,8 @@ win.style.top = ((win.innerHeight-height)/2)+ "px";
 win.style.left = ((win.innerHeight-width)/2) + "px";
 nav1.onmousedown=function (event){
 console.log("moving a window...");
-  var rect=event.target.getBoundingClientRect();
-  var x=parseFloat(event.pageX)-5;
-var y=parseFloat(event.pageY)-width/2;
+var x=parseFloat(event.pageX)-width/2;
+var y=parseFloat(event.pageY)-2;
 win.style.top = (new String(y))+ "px";
 win.style.left = (new String(x)) + "px";
 win.style.height=height+"px";
