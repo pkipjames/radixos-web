@@ -89,7 +89,7 @@ for( var i=0;i<wins.length;i++){
   
 }
 function appOpen(parent,name,content,height,width,icon){
-var win=elt("div",{class:"appwindow"});
+var win=elt("div",{moving:false,class:"appwindow"});
  var ico;
 if(icon){ico=elt("img",{src:icon,height:"18px",alt:"icon"});}else{ ico=elt("span",{style:"border:1px solid #ffffff;"},name.substring(0,1));}
 
@@ -129,8 +129,32 @@ win.style.top = (new String(y))+ "px";
 win.style.left = (new String(x)) + "px";
 win.style.height=height+"px";
 win.style.width=width+"px";
-                                       
+win.setAttribute("moving",true);                                       
 };
+
+nav1.onmouseup=function (event){
+console.log("moving a window...");
+var x=parseFloat(event.pageX)-width/2;
+var y=parseFloat(event.pageY)-2;
+win.style.top = (new String(y))+ "px";
+win.style.left = (new String(x)) + "px";
+win.style.height=height+"px";
+win.style.width=width+"px";
+win.setAttribute("moving",false);                                       
+};
+nav1.onmousemove=function (event){
+  if(win.getAttribute("moving")==false){
+console.log("moving a window...");
+var x=parseFloat(event.pageX)-width/2;
+var y=parseFloat(event.pageY)-2;
+win.style.top = (new String(y))+ "px";
+win.style.left = (new String(x)) + "px";
+win.style.height=height+"px";
+win.style.width=width+"px";
+  }               
+};
+
+
 
 
 
