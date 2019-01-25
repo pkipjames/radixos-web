@@ -36,9 +36,7 @@
 
 <title>RadixOS web</title>
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"> </script>
 
-<style> /* CSS rules to use for styling the overlay: .chromeFrameOverlayContent .chromeFrameOverlayContent iframe .chromeFrameOverlayCloseBar .chromeFrameOverlayUnderlay */ </style>
 <style type="text/css"> 
  input[type="text"],  textarea, select,  input[type="date"], input{ 
    background-color:#000000;
@@ -89,7 +87,7 @@ form.form p.submit {
 
 </head>
 
-<body onload="try{CFInstall.check();checkMemStatus();}catch(err){alert(err);}">
+<body onload="try{checkMemStatus();}catch(err){alert(err);}">
 <section id="loginScreen" style="background: rgba(255,0,0,1);
 background: -moz-linear-gradient(left, rgba(255,0,0,1) 0%, rgba(255,238,238,1) 0%, rgba(255,0,0,1) 0%, rgba(255,238,238,1) 50%, rgba(255,0,0,1) 100%);
 background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,0,0,1)), color-stop(0%, rgba(255,238,238,1)), color-stop(0%, rgba(255,0,0,1)), color-stop(50%, rgba(255,238,238,1)), color-stop(100%, rgba(255,0,0,1)));
@@ -110,7 +108,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0000', end
       <input type="text" id="name1" placeholder="Username" /><br/>
       <input type="text" id="pword1" placeholder="Password" /><br/>
       <label for="autoFSbox">Auto FUlllscreen on page load</label><input type="checkbox" id="autoFSbox" /><br/>
-      <button onclick="setupUser(getE('#name1').value,getE('#pword1').value,getE('#autoFSSbox').checked);getE('#name1').value='';getE('#pword1').value='';showScreen('loginScreen');">Setup</button>
+      <button onclick="try{setupUser(getE('#name1').value,getE('#pword1').value,getE('#autoFSSbox').checked);getE('#name1').value='';getE('#pword1').value='';showScreen('loginScreen');}catch(err){alert(err);}">Setup</button>
    </section>
 <section id="desktop" class="desktop" style="display:none;" class="screen">
   <nav style="display:block;" class="nav" id="mainNavApp"><img src="mainBtn2.png" width="40" height="40" alt="+" title="App Menu" /></nav>
