@@ -93,7 +93,7 @@ var win=elt("div",{class:"appwindow"});
  var ico;
 if(icon){ico=elt("img",{src:icon,height:"18px",alt:"icon"});}else{ ico=elt("span",{style:"border:1px solid #ffffff;"},name.substring(0,1));}
 
-var nav1=elt("nav",{class:"titlebar"},elt("span",{onclick:function (){win.parentNode.removeChild(win);},style:"font-family:Ubuntu,'helvetica neue',verdana,sans-serif;font-weight:100;color:#ff0000;"},"X"),ico,name);
+var nav1=elt("nav",{class:"titlebar"},elt("span",{onclick:function (event){event.stopPropagation();win.parentNode.removeChild(win);},style:"font-family:Ubuntu,'helvetica neue',verdana,sans-serif;font-weight:100;color:#ff0000;"},"X"),ico,name);
 
 makeWindowsInactive();
 win.classList.add("active");
@@ -124,8 +124,8 @@ win.style.left = ((win.innerHeight-width)/2) + "px";
 nav1.onmousedown=function (event){
 console.log("moving a window...");
   var rect=event.target.getBoundingClientRect();
-  var x=parseFloat(event.pageX)+(parseFloat(event.clientX)-parseFloat(nav1.offsetLeft));
-var y=parseFloat(event.pageY)+(parseFloat(event.clientY)-parseFloat(nav1.offsetTop));
+  var x=parseFloat(event.pageX)+7;
+var y=parseFloat(event.pageY)+7;
 win.style.top = (new String(y))+ "px";
 win.style.left = (new String(x)) + "px";
 win.style.height=height+"px";
